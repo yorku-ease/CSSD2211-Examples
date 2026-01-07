@@ -1,0 +1,110 @@
+username,movie_title,rating
+Alice,"The Shawshank Redemption",5
+Alice,"The Godfather",4
+Alice,"The Dark Knight",5
+Alice,"Pulp Fiction",3
+Alice,"Inception",4
+Alice,"The Lord of the Rings: The Return of the King",5
+Alice,"12 Angry Men",4
+Alice,"The Matrix",5
+Alice,"Forrest Gump",3
+Alice,"Se7en",4
+
+Bob,"The Godfather Part II",5
+Bob,"The Dark Knight",4
+Bob,"The Shawshank Redemption",5
+Bob,"Interstellar",4
+Bob,"The Lord of the Rings: The Two Towers",5
+Bob,"Goodfellas",4
+Bob,"Schindler's List",5
+Bob,"The Lord of the Rings: The Fellowship of the Ring",3
+Bob,"Star Wars: Episode V - The Empire Strikes Back",5
+Bob,"Seven Samurai",4
+
+Charlie,"The Dark Knight",5
+Charlie,"The Godfather",4
+Charlie,"The Shawshank Redemption",5
+Charlie,"12 Angry Men",3
+Charlie,"Inception",4
+Charlie,"The Matrix",5
+Charlie,"Pulp Fiction",4
+Charlie,"The Lord of the Rings: The Two Towers",5
+Charlie,"Forrest Gump",3
+Charlie,"Se7en",4
+
+Diana,"The Shawshank Redemption",5
+Diana,"The Godfather Part II",4
+Diana,"The Dark Knight",5
+Diana,"Pulp Fiction",4
+Diana,"Inception",5
+Diana,"The Lord of the Rings: The Return of the King",4
+Diana,"Star Wars: Episode V - The Empire Strikes Back",5
+Diana,"The Lord of the Rings: The Fellowship of the Ring",4
+Diana,"12 Angry Men",3
+Diana,"Schindler's List",5
+
+Eve,"The Godfather",5
+Eve,"The Dark Knight",4
+Eve,"The Shawshank Redemption",5
+Eve,"The Matrix",4
+Eve,"The Lord of the Rings: The Two Towers",5
+Eve,"Goodfellas",4
+Eve,"Pulp Fiction",5
+Eve,"Forrest Gump",3
+Eve,"Se7en",4
+Eve,"Interstellar",5
+
+Frank,"The Shawshank Redemption",5
+Frank,"The Godfather",4
+Frank,"The Dark Knight",5
+Frank,"Inception",4
+Frank,"12 Angry Men",3
+Frank,"The Lord of the Rings: The Return of the King",5
+Frank,"Pulp Fiction",4
+Frank,"The Lord of the Rings: The Fellowship of the Ring",5
+Frank,"Forrest Gump",3
+Frank,"Se7en",4
+
+Grace,"The Godfather Part II",5
+Grace,"The Dark Knight",4
+Grace,"The Shawshank Redemption",5
+Grace,"The Matrix",4
+Grace,"The Lord of the Rings: The Two Towers",5
+Grace,"Goodfellas",4
+Grace,"Pulp Fiction",5
+Grace,"Forrest Gump",3
+Grace,"12 Angry Men",4
+Grace,"Interstellar",5
+
+Heidi,"The Shawshank Redemption",5
+Heidi,"The Godfather",4
+Heidi,"The Dark Knight",5
+Heidi,"Pulp Fiction",4
+Heidi,"Inception",5
+Heidi,"The Lord of the Rings: The Return of the King",4
+Heidi,"Star Wars: Episode V - The Empire Strikes Back",5
+Heidi,"The Lord of the Rings: The Fellowship of the Ring",4
+Heidi,"12 Angry Men",3
+Heidi,"Schindler's List",5
+
+Ivan,"The Godfather",5
+Ivan,"The Dark Knight",4
+Ivan,"The Shawshank Redemption",5
+Ivan,"Interstellar",4
+Ivan,"The Lord of the Rings: The Two Towers",5
+Ivan,"Goodfellas",4
+Ivan,"Pulp Fiction",5
+Ivan,"Forrest Gump",3
+Ivan,"Se7en",4
+Ivan,"The Matrix",5
+
+Judy,"The Shawshank Redemption",5
+Judy,"The Godfather Part II",4
+Judy,"The Dark Knight",5
+Judy,"Pulp Fiction",4
+Judy,"Inception",5
+Judy,"The Lord of the Rings: The Return of the King",4
+Judy,"Star Wars: Episode V - The Empire Strikes Back",5
+Judy,"The Lord of the Rings: The Fellowship of the Ring",4
+Judy,"12 Angry Men",3
+Judy,"Schindler's List",5

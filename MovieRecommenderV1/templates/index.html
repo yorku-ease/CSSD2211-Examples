@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ratings</title>
+
+    <script>
+        function showRatings(user) {
+            const data = ratings[user];
+            let content = "<h3>Ratings for " + user + "</h3>";
+
+            if (Object.keys(data).length === 0) {
+                content += "<p>No ratings yet.</p>";
+            } else {
+                content += "<ul>";
+                for (const movie in data) {
+                    content += "<li>" +
+                        movies[movie] + " : " + data[movie] +
+                        "</li>";
+                }
+                content += "</ul>";
+            }
+
+            document.getElementById("popup-content").innerHTML = content;
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 1px solid #333;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Add a Rating</h2>
+
+<form method="post">
+    Name:
+    <input name="person" required>
+
+    Movie:
+    <select name="movie" required>
+        <option value="">-- Select --</option>
+        {% for movie_id, title in movies.items() %}
+            <option value="{{ movie_id }}">{{ title }}</option>
+        {% endfor %}
+    </select>
+
+    Rating:
+    <input type="number" name="rating" min="1" max="5" required>
+
+    <button type="submit">Save</button>
+</form>
+
+<hr>
+
+<h3>Users</h3>
+<ul>
+{% for p in people %}
+    <li>
+        {{ p }}
+        |
+        <a href="javascript:void(0);" onclick="showRatings('{{ p }}')">
+            View ratings
+        </a>
+        |
+        <a href="/recommend/{{ p }}">
+            Get recommendations
+        </a>
+    </li>
+{% endfor %}
+</ul>
+
+<!-- Popup -->
+<div id="overlay" onclick="closePopup()"></div>
+<div id="popup">
+    <div id="popup-content"></div>
+    <button onclick="closePopup()">Close</button>
+</div>
+
+<script>
+    const ratings = {{ ratings | tojson }};
+    const movies = {{ movies | tojson }};
+</script>
+
+</body>
+</html>
