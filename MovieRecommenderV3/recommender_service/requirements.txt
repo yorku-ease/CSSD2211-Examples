@@ -1,0 +1,7 @@
+redis
+scikit-learn
+pandas
+numpy
+flask
+requests
+psutil

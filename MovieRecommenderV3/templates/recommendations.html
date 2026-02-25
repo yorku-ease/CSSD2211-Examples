@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations</title>
+</head>
+<body>
+
+<h2>Recommended Movies</h2>
+
+{% if recs is not none and not recs.empty %}
+    <table border="1" cellpadding="6">
+        <tr>
+            <th>Movie</th>
+            <th>Predicted Score</th>
+        </tr>
+        {% for movie_id, score in recs.items() %}
+        <tr>
+            <td>{{ movies[movie_id] if movie_id in movies else movie_id }}</td>
+            <td>{{ "%.2f"|format(score) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No recommendations available. Please rate more movies.</p>
+{% endif %}
+
+<br>
+<a href="/">Back</a>
+
+</body>
+</html>

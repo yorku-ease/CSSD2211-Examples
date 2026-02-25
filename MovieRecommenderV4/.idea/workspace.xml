@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f29ce3af-f41e-4c84-b662-79610007ecfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../MovieRecommenderV3/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MovieRecommenderV3/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MovieRecommenderV3/ratings_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MovieRecommenderV3/ratings_service/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MovieRecommenderV3/recommender_service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MovieRecommenderV3/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MovieRecommenderV3/shared/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/cAdvisor/cadvisor-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/cAdvisor/cadvisor.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/grafana/grafana-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/grafana/grafana-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/prometheus/prometheus-config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/prometheus/prometheus-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/prometheus/prometheus-rbac.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/prometheus/prometheus-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/ratings/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/ratings/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/recommender/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/recommender/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/redis/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/redis/redis-config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/redis/service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MovieRecommenderV1/.idea/MovieRecommenderV1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieRecommenderV1/.idea/MovieRecommenderV1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MovieRecommenderV1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieRecommenderV1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MovieRecommenderV2/.idea/MovieRecommenderV2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieRecommenderV2/.idea/MovieRecommenderV2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MovieRecommenderV2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieRecommenderV2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MovieRecommenderV2/metrics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../MovieRecommenderV2/metrics.csv" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/fokaefs/OneDrive - York University/WORK/COURSES/CSSD2211/W26/EXERCISES/CSSD2211-Examples/MovieRecommenderV4" value="39UMSU8rogJ8svErJJtXe8EoeKF" />
+      <entry key="_C:/Users/mario/OneDrive - York University/WORK/COURSES/CSSD2211/W26/EXERCISES/CSSD2211-Examples/MovieRecommenderV4" value="39PYHUq7I3ckoggQ9uLf9yBv7Ij" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kubernetes ConfigMap" />
+        <option value="Kubernetes Deployment" />
+        <option value="Kubernetes ClusterRole" />
+        <option value="Kubernetes Pod" />
+        <option value="Kubernetes Service" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="39PYHUq7I3ckoggQ9uLf9yBv7Ij" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.workload.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fokaefs\OneDrive - York University\WORK\COURSES\CSSD2211\W26\EXERCISES\CSSD2211-Examples\MovieRecommenderV4\k8s\redis" />
+      <recent name="C:\Users\fokaefs\OneDrive - York University\WORK\COURSES\CSSD2211\W26\EXERCISES\CSSD2211-Examples\MovieRecommenderV4\k8s\recommender" />
+      <recent name="C:\Users\fokaefs\OneDrive - York University\WORK\COURSES\CSSD2211\W26\EXERCISES\CSSD2211-Examples\MovieRecommenderV4\k8s\ratings" />
+      <recent name="C:\Users\fokaefs\OneDrive - York University\WORK\COURSES\CSSD2211\W26\EXERCISES\CSSD2211-Examples\MovieRecommenderV4\recommender_service\k8s" />
+      <recent name="C:\Users\fokaefs\OneDrive - York University\WORK\COURSES\CSSD2211\W26\EXERCISES\CSSD2211-Examples\MovieRecommenderV4\ratings_service\k8s" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-2653e85de345-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.31033.139" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f29ce3af-f41e-4c84-b662-79610007ecfa" name="Changes" comment="" />
+      <created>1770599084695</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770599084695</updated>
+      <workItem from="1770599085795" duration="753000" />
+      <workItem from="1770745568338" duration="214000" />
+      <workItem from="1770745826323" duration="132000" />
+      <workItem from="1770746166297" duration="7237000" />
+      <workItem from="1770771841935" duration="5455000" />
+      <workItem from="1771476071323" duration="1670000" />
+      <workItem from="1771483520742" duration="1039000" />
+      <workItem from="1771947276508" duration="559000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MovieRecommenderV4$workload.coverage" NAME="workload Coverage Results" MODIFIED="1770753632152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

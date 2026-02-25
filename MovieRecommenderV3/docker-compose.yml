@@ -1,0 +1,32 @@
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  ratings:
+    build:
+      context: .
+      dockerfile: ratings_service/Dockerfile
+    container_name: ratings
+    environment:
+      - SERVICE_NAME=ratings
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    ports:
+      - "5000:5000"
+
+  recommender:
+    build:
+      context: .
+      dockerfile: recommender_service/Dockerfile
+    container_name: recommender
+    environment:
+      - SERVICE_NAME=recommender
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+    ports:
+      - "5001:5001"
