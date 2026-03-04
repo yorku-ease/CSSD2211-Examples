@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: ratings
-          image: fokaefs/ratings:instrumented-v2
+          image: fokaefs/ratings:1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000

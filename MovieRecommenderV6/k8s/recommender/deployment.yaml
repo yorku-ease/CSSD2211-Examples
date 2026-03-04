@@ -1,32 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ratings
+  name: recommender
   labels:
-    app: ratings
+    app: recommender
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ratings
+      app: recommender
   template:
     metadata:
       labels:
-        app: ratings
+        app: recommender
     spec:
       containers:
-        - name: ratings
-          image: fokaefs/ratings:instrumented-v2
+        - name: recommender
+          image: fokaefs/recommender:1.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 5000
+            - containerPort: 5001
               protocol: TCP
           env:
             - name: SERVICE_NAME
-              value: ratings
-          envFrom:
-            - configMapRef:
-                name: redis-config
+              value: recommender
+            - name: REDIS_HOST
+              value: redis
+            - name: REDIS_PORT
+              value: "6379"
 
           resources:
             requests:

@@ -9,15 +9,14 @@ ENV PYTHONUNBUFFERED=1
 ENV SERVICE_NAME=recommender
 
 WORKDIR /app
+COPY shared/ /app/shared
+COPY recommender_service/ /app
+
+
+
 
 COPY requirements.txt /app
 RUN pip install --no-cache-dir -r requirements.txt
-
-RUN pip install --no-cache-dir prometheus-client \
-    && python -c "import prometheus_client"  # Safety check: fail build if missing
-
-COPY shared/ ./shared
-COPY recommender_service/ .
 
 EXPOSE 5001
 

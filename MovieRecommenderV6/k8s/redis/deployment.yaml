@@ -1,32 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ratings
+  name: redis
   labels:
-    app: ratings
+    app: redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ratings
+      app: redis
   template:
     metadata:
       labels:
-        app: ratings
+        app: redis
     spec:
       containers:
-        - name: ratings
-          image: fokaefs/ratings:instrumented-v2
+        - name: redis
+          image: redis:7.2-alpine
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 5000
+            - containerPort: 6379
               protocol: TCP
-          env:
-            - name: SERVICE_NAME
-              value: ratings
-          envFrom:
-            - configMapRef:
-                name: redis-config
 
           resources:
             requests:

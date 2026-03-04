@@ -59,7 +59,4 @@ def run_workload(csv_file):
 
 
 if __name__ == "__main__":
-    start_time = time.time()
     run_workload("data/ratings_workload.csv")
-    end_time = time.time()
-    print(f"Workload completed in {end_time - start_time:.2f} seconds")

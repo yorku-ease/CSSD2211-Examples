@@ -5,3 +5,4 @@ numpy
 flask
 requests
 psutil
+prometheus-client

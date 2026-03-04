@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: recommender
-          image: fokaefs/recommender:1.0
+          image: fokaefs/recommender:instrumented-v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5001
