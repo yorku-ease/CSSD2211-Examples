@@ -86,5 +86,5 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl set image deployment/ratings-service ratings-service=${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1
-        kubectl set image deployment/recommender-service recommender-service=${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
+        kubectl set image deployment/ratings ratings=${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1
+        kubectl set image deployment/recommender recommender=${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
