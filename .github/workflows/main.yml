@@ -20,7 +20,10 @@ jobs:
 
     - name: Install dependencies (ratings service)
       working-directory: MovieRecommenderV6/ratings_service
-      run: pip install -r requirements.txt
+      run: |
+        "${{ env.pythonLocation }}\python" -m pip install --upgrade pip
+        "${{ env.pythonLocation }}\python" -m pip install -r requirements.txt
+
 
     - name: Run tests (ratings service)
       working-directory: MovieRecommenderV6/ratings_service
@@ -28,7 +31,10 @@ jobs:
 
     - name: Install dependencies (recommender service)
       working-directory: MovieRecommenderV6/recommender_service
-      run: pip install -r requirements.txt
+      run: |
+        "${{ env.pythonLocation }}\python" -m pip install --upgrade pip
+        "${{ env.pythonLocation }}\python" -m pip install -r requirements.txt
+
 
     - name: Run tests (recommender service)
       working-directory: MovieRecommenderV6/recommender_service
