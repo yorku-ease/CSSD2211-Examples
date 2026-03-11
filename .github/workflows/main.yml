@@ -76,10 +76,15 @@ jobs:
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
 
 
-    - name: Set up kubectl
+    - name: Set up kubeconfig (Windows)
+      shell: powershell
       run: |
-        echo "${{ secrets.KUBECONFIG_DATA }}" | base64 --decode > $HOME/.kubeconfig
-        export KUBECONFIG=$HOME/.kubeconfig
+        $decoded = [System.Text.Encoding]::UTF8.GetString(
+          [System.Convert]::FromBase64String("${{ secrets.KUBECONFIG_DATA }}")
+        )
+        New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.kube" | Out-Null
+        Set-Content -Path "$env:USERPROFILE\.kube\config" -Value $decoded
+        $env:KUBECONFIG = "$env:USERPROFILE\.kube\config"
 
     - name: Deploy to Kubernetes
       run: |
