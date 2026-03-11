@@ -1,0 +1,90 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-test-push:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install dependencies (ratings service)
+      working-directory: MovieRecommenderV6/ratings_service
+      run: |
+        & "${{ env.pythonLocation }}\python.exe" -m ensurepip --upgrade
+        & "${{ env.pythonLocation }}\python" -m pip install --upgrade pip
+        & "${{ env.pythonLocation }}\python" -m pip install -r requirements.txt
+
+
+    - name: Run tests (ratings service)
+      working-directory: MovieRecommenderV6/ratings_service
+      shell: powershell
+      run: |
+        & "${{ env.pythonLocation }}\python.exe" -m pytest `
+           "${{ github.workspace }}\MovieRecommenderV6\ratings_service\test_ratings_service.py" -q
+
+
+
+    - name: Install dependencies (recommender service)
+      working-directory: MovieRecommenderV6/recommender_service
+      run: |
+        & "${{ env.pythonLocation }}\python.exe" -m ensurepip --upgrade
+        & "${{ env.pythonLocation }}\python" -m pip install --upgrade pip
+        & "${{ env.pythonLocation }}\python" -m pip install -r requirements.txt
+
+
+    - name: Run tests (recommender service)
+      working-directory: MovieRecommenderV6/recommender_service
+      shell: powershell
+      run: |
+        & "${{ env.pythonLocation }}\python.exe" -m pytest `
+          "${{ github.workspace }}\MovieRecommenderV6\recommender_service\test_recommender_service.py" -q
+        & "${{ env.pythonLocation }}\python.exe" -m pytest `
+          "${{ github.workspace }}\MovieRecommenderV6\recommender_service\test_recommender.py" -q
+
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push ratings-service image
+      run: |
+        docker build `
+          -f MovieRecommenderV6/ratings_service/Dockerfile `
+          -t ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1 `
+          MovieRecommenderV6
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1
+
+    - name: Build and push recommender-service image
+      run: |
+        docker build `
+          -f MovieRecommenderV6/recommender_service/Dockerfile `
+          -t ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1 `
+          MovieRecommenderV6
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
+
+
+    - name: Set up kubeconfig (Windows)
+      shell: powershell
+      run: |
+        $bytes = [System.Convert]::FromBase64String("${{ secrets.KUBECONFIG_DATA }}")
+        New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.kube" | Out-Null
+        [System.IO.File]::WriteAllBytes("$env:USERPROFILE\.kube\config", $bytes)
+        $env:KUBECONFIG = "$env:USERPROFILE\.kube\config"
+
+    - name: Deploy to Kubernetes
+      run: |
+        kubectl set image deployment/ratings ratings=${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1
+        kubectl set image deployment/recommender recommender=${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
