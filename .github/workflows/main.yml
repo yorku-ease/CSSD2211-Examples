@@ -61,17 +61,17 @@ jobs:
 
     - name: Build and push ratings-service image
       run: |
-        docker build \
-          -f MovieRecommenderV6/ratings_service/Dockerfile \
-          -t ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1 \
+        docker build `
+          -f MovieRecommenderV6/ratings_service/Dockerfile `
+          -t ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1 `
           MovieRecommenderV6
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1
 
     - name: Build and push recommender-service image
       run: |
-        docker build \
-          -f MovieRecommenderV6/recommender_service/Dockerfile \
-          -t ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1 \
+        docker build `
+          -f MovieRecommenderV6/recommender_service/Dockerfile `
+          -t ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1 `
           MovieRecommenderV6
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
 
