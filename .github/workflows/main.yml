@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-test-push:
-    runs-on: self-hosted
+    runs-on: temp-laptop
 
     steps:
     - name: Checkout code
