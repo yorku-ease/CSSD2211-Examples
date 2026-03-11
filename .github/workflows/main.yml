@@ -28,7 +28,10 @@ jobs:
 
     - name: Run tests (ratings service)
       working-directory: MovieRecommenderV6/ratings_service
-      run: pytest -q
+      shell: powershell
+      run: |
+        & "${{ env.pythonLocation }}\python.exe" -m pytest -q
+
 
     - name: Install dependencies (recommender service)
       working-directory: MovieRecommenderV6/recommender_service
@@ -40,7 +43,10 @@ jobs:
 
     - name: Run tests (recommender service)
       working-directory: MovieRecommenderV6/recommender_service
-      run: pytest -q
+      shell: powershell
+      run: |
+        & "${{ env.pythonLocation }}\python.exe" -m pytest -q
+
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v3
