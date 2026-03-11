@@ -30,7 +30,7 @@ jobs:
       working-directory: MovieRecommenderV6/ratings_service
       shell: powershell
       run: |
-        & "${{ env.pythonLocation }}\python.exe" -m pytest -q
+        & "${{ env.pythonLocation }}\python.exe" -m pytest MovieRecommenderV6/ratings_service/test_ratings_service.py -q
 
 
     - name: Install dependencies (recommender service)
@@ -45,7 +45,8 @@ jobs:
       working-directory: MovieRecommenderV6/recommender_service
       shell: powershell
       run: |
-        & "${{ env.pythonLocation }}\python.exe" -m pytest -q
+        & "${{ env.pythonLocation }}\python.exe" -m pytest MovieRecommenderV6/recommender_service/test_recommender_service.py -q
+        & "${{ env.pythonLocation }}\python.exe" -m pytest MovieRecommenderV6/recommender_service/test_recommender.py -q
 
 
     - name: Log in to Docker Hub
