@@ -79,11 +79,9 @@ jobs:
     - name: Set up kubeconfig (Windows)
       shell: powershell
       run: |
-        $decoded = [System.Text.Encoding]::UTF8.GetString(
-          [System.Convert]::FromBase64String("${{ secrets.KUBECONFIG_DATA }}")
-        )
+        $bytes = [System.Convert]::FromBase64String("${{ secrets.KUBECONFIG_DATA }}")
         New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.kube" | Out-Null
-        Set-Content -Path "$env:USERPROFILE\.kube\config" -Value $decoded
+        [System.IO.File]::WriteAllBytes("$env:USERPROFILE\.kube\config", $bytes)
         $env:KUBECONFIG = "$env:USERPROFILE\.kube\config"
 
     - name: Deploy to Kubernetes
