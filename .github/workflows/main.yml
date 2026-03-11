@@ -30,9 +30,8 @@ jobs:
       working-directory: MovieRecommenderV6/ratings_service
       shell: powershell
       run: |
-        run: |
-          & "${{ env.pythonLocation }}\python.exe" -m pytest `
-            "${{ github.workspace }}\MovieRecommenderV6\ratings_service\test_ratings_service.py" -q
+        & "${{ env.pythonLocation }}\python.exe" -m pytest `
+           "${{ github.workspace }}\MovieRecommenderV6\ratings_service\test_ratings_service.py" -q
 
 
 
