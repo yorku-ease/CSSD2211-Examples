@@ -34,12 +34,12 @@ def api_rate():
 
     except Exception as e:
         status = "500"
-        raise e
+        return {"error": "invalid request"}, 500
 
     finally:
         latency = time.time() - start_time
-        REQUEST_COUNT.labels(request.method, endpoint="/api/rate", status=status).inc()
-        REQUEST_LATENCY.labels(request.method, endpoint="/api/rate").observe(latency)
+        REQUEST_COUNT.labels(method=request.method, endpoint="/api/rate", status=status).inc()
+        REQUEST_LATENCY.labels(method=request.method, endpoint="/api/rate").observe(latency)
 
 @app.route("/metrics")
 def metrics():

@@ -22,6 +22,7 @@ app = Flask(__name__)
 
 @app.route("/api/recommend/<username>", methods=["GET"])
 def api_recommend(username):
+    status = "200"
     start_time = time.time()
     try:
         ratings_dict = {
@@ -37,12 +38,12 @@ def api_recommend(username):
 
     except Exception as e:
         status = "500"
-        raise e
+        return {"error": "invalid request"}, status
 
     finally:
         latency = time.time() - start_time
-        REQUEST_COUNT.labels(request.method, endpoint="/api/recommend", status=status).inc()
-        REQUEST_LATENCY.labels(request.method, endpoint="/api/recommend",).observe(latency)
+        REQUEST_COUNT.labels(method=request.method, endpoint="/api/recommend", status=status).inc()
+        REQUEST_LATENCY.labels(method=request.method, endpoint="/api/recommend",).observe(latency)
 
 @app.route("/metrics")
 def metrics():

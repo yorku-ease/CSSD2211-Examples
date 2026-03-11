@@ -5,4 +5,5 @@ numpy
 flask
 requests
 psutil
-prometheus_client
+prometheus-client
+pytest
