@@ -42,12 +42,12 @@ jobs:
 
     - name: Build and push ratings-service image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1 ratings_service
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1 MovieRecommenderV6/ratings_service
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1
 
     - name: Build and push recommender-service image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1 recommender_service
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1 MovieRecommenderV6/recommender_service
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
 
     - name: Set up kubectl
