@@ -15,7 +15,7 @@ COPY recommender_service/ /app
 
 
 
-COPY requirements.txt /app
+COPY recommender_service/requirements.txt /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5001

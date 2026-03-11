@@ -18,7 +18,7 @@ COPY ratings_service/ /app
 
 
 # Install dependencies first (better layer caching)
-COPY requirements.txt /app/
+COPY ratings_service/requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the service port
