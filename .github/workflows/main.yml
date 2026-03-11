@@ -19,19 +19,19 @@ jobs:
         python-version: "3.12"
 
     - name: Install dependencies (ratings service)
-      working-directory: ratings_service
+      working-directory: MovieRecommenderV6/ratings_service
       run: pip install -r requirements.txt
 
     - name: Run tests (ratings service)
-      working-directory: ratings_service
+      working-directory: MovieRecommenderV6/ratings_service
       run: pytest -q
 
     - name: Install dependencies (recommender service)
-      working-directory: recommender_service
+      working-directory: MovieRecommenderV6/recommender_service
       run: pip install -r requirements.txt
 
     - name: Run tests (recommender service)
-      working-directory: recommender_service
+      working-directory: MovieRecommenderV6/recommender_service
       run: pytest -q
 
     - name: Log in to Docker Hub
@@ -42,13 +42,13 @@ jobs:
 
     - name: Build and push ratings-service image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:latest ratings_service
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:latest
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1 ratings_service
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/ratings-service:v1
 
     - name: Build and push recommender-service image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:latest recommender_service
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:latest
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1 recommender_service
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/recommender-service:v1
 
     - name: Set up kubectl
       run: |
