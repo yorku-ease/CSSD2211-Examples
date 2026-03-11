@@ -21,6 +21,7 @@ jobs:
     - name: Install dependencies (ratings service)
       working-directory: MovieRecommenderV6/ratings_service
       run: |
+        & "${{ env.pythonLocation }}\python.exe" -m ensurepip --upgrade
         & "${{ env.pythonLocation }}\python" -m pip install --upgrade pip
         & "${{ env.pythonLocation }}\python" -m pip install -r requirements.txt
 
@@ -32,6 +33,7 @@ jobs:
     - name: Install dependencies (recommender service)
       working-directory: MovieRecommenderV6/recommender_service
       run: |
+        & "${{ env.pythonLocation }}\python.exe" -m ensurepip --upgrade
         & "${{ env.pythonLocation }}\python" -m pip install --upgrade pip
         & "${{ env.pythonLocation }}\python" -m pip install -r requirements.txt
 
